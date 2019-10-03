@@ -21,7 +21,8 @@ const routes: Routes = [
   },
   {
     path: 'contact',
-    component: ContactComponent
+    component: ContactComponent,
+    data: { dataString: 'This is the data field on the path' }
   },
   {
     path: 'about',
