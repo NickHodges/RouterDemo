@@ -5,18 +5,13 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ProductIdComponent } from './product-id/product-id.component';
-import { Z_FULL_FLUSH } from 'zlib';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: ProductComponent
-  },
   {
     path: 'product',
     component: ProductComponent,
     children: [
-      { path: 'blah', component: ProductEditComponent },
       {
         path: ':id',
         component: ProductIdComponent
@@ -31,11 +26,15 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
