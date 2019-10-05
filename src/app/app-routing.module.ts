@@ -6,17 +6,28 @@ import { AboutComponent } from './about/about.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ProductIdComponent } from './product-id/product-id.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
   {
     path: 'product',
     component: ProductComponent,
     children: [
       {
         path: ':id',
-        component: ProductIdComponent
+        component: ProductIdComponent,
+        outlet: 'foo'
       },
-      { path: ':id/edit', component: ProductEditComponent }
+      { path: '', component: ProductEditComponent }
     ]
   },
   {
