@@ -1,3 +1,4 @@
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProductComponent } from './product/product.component';
@@ -7,6 +8,7 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ProductIdComponent } from './product-id/product-id.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './authGuard';
 
 const routes: Routes = [
   {
@@ -27,11 +29,12 @@ const routes: Routes = [
         component: ProductIdComponent,
         outlet: 'foo'
       },
-      { path: '', component: ProductEditComponent }
+      { path: 'edit', component: ProductEditComponent, outlet: 'bar' }
     ]
   },
   {
     path: 'contact',
+    canActivate: [AuthGuard],
     component: ContactComponent,
     data: { dataString: 'This is the data field on the path' }
   },
