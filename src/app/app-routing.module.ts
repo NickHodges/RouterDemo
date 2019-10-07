@@ -1,4 +1,3 @@
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProductComponent } from './product/product.component';
@@ -49,7 +48,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [RouterModule.forRoot(routes, { enableTracing: false })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
