@@ -14,7 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './authGuard';
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, ProductComponent, ContactComponent, AboutComponent, ProductIdComponent, ProductEditComponent, NotFoundComponent, HomeComponent],
+  declarations: [AppComponent, NavBarComponent, ProductComponent, ContactComponent, AboutComponent, ProductIdComponent,
+    ProductEditComponent, NotFoundComponent, HomeComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
