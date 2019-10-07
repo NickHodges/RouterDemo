@@ -1,6 +1,10 @@
 <p>
   product works!
 </p>
+<p *ngIf="prodType?.length > 0">You chose the {{ prodType }} products.</p>
 <router-outlet name="foo"></router-outlet>
 <br />
 <router-outlet name="bar"></router-outlet>
+<p>
+  <button class="btn btn-primary" (click)="goProducts()">Select Popular Products</button>
+</p>
